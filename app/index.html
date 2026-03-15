@@ -6,18 +6,11 @@
 <title>WILDER CONTENT NETWORK</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&family=Rajdhani:wght@300;400;500;600;700&display=swap');
-  :root{--cyan:#00BFFF;--pink:#FF2D87;--dark:#000810;--darker:#000408;--card:#020F1E;--card-hover:#041A2E;--border:#0A2540;--border-light:#1A3A5C;--text:#8BAFC8;--white:#E0F0FF;--green:#00FF88;--yellow:#FFD700;--red:#FF4444;--wild:#00BFFF;--purple:#A855F7}
+  :root{--cyan:#00BFFF;--pink:#FF2D87;--dark:#000810;--darker:#000408;--card:#020F1E;--border:#0A2540;--border-light:#1A3A5C;--text:#8BAFC8;--white:#E0F0FF;--green:#00FF88;--yellow:#FFD700;--red:#FF4444;--purple:#A855F7}
   *{margin:0;padding:0;box-sizing:border-box}
   body{background:var(--dark);color:var(--white);font-family:'Rajdhani',sans-serif;min-height:100vh;overflow-x:hidden}
   body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,191,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(0,191,255,0.02) 1px,transparent 1px);background-size:50px 50px;pointer-events:none;z-index:0}
-
-  /* SCROLLBAR */
-  ::-webkit-scrollbar{width:6px}
-  ::-webkit-scrollbar-track{background:var(--darker)}
-  ::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
-  ::-webkit-scrollbar-thumb:hover{background:var(--cyan)}
-
-  /* LAYOUT */
+  ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--darker)}::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
   .wrapper{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:24px}
 
   /* NAV */
@@ -25,19 +18,19 @@
   .nav-brand{display:flex;align-items:center;gap:16px}
   .nav-logo{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--cyan);letter-spacing:3px;text-shadow:0 0 20px rgba(0,191,255,0.4)}
   .nav-logo span{color:var(--pink)}
-  .nav-tag{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--dark);background:var(--cyan);padding:2px 8px;letter-spacing:2px;text-transform:uppercase}
+  .nav-tag{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--dark);background:var(--cyan);padding:2px 8px;letter-spacing:2px}
   .nav-links{display:flex;gap:24px;align-items:center}
-  .nav-link{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--text);letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:color 0.2s;text-decoration:none;padding:8px 0}
+  .nav-link{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--text);letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:color 0.2s;padding:8px 0}
   .nav-link:hover,.nav-link.active{color:var(--cyan)}
   .btn{font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:10px 24px;border:none;cursor:pointer;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px}
-  .btn-cyan{background:var(--cyan);color:var(--dark)}
-  .btn-cyan:hover{box-shadow:0 0 20px rgba(0,191,255,0.4);transform:translateY(-1px)}
-  .btn-pink{background:var(--pink);color:var(--white)}
-  .btn-pink:hover{box-shadow:0 0 20px rgba(255,45,135,0.4)}
-  .btn-outline{background:transparent;color:var(--cyan);border:1px solid var(--cyan)}
-  .btn-outline:hover{background:rgba(0,191,255,0.1)}
-  .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border)}
-  .btn-ghost:hover{border-color:var(--cyan);color:var(--cyan)}
+  .btn-cyan{background:var(--cyan);color:var(--dark)}.btn-cyan:hover{box-shadow:0 0 20px rgba(0,191,255,0.4);transform:translateY(-1px)}
+  .btn-pink{background:var(--pink);color:var(--white)}.btn-pink:hover{box-shadow:0 0 20px rgba(255,45,135,0.4)}
+  .btn-outline{background:transparent;color:var(--cyan);border:1px solid var(--cyan)}.btn-outline:hover{background:rgba(0,191,255,0.1)}
+  .wallet-bar{display:flex;align-items:center;gap:12px;padding:8px 16px;background:var(--card);border:1px solid var(--border);cursor:pointer;transition:all 0.2s}
+  .wallet-bar:hover{border-color:var(--cyan)}
+  .wallet-dot{width:8px;height:8px;border-radius:50%}.wallet-dot.connected{background:var(--green);box-shadow:0 0 8px var(--green)}.wallet-dot.disconnected{background:var(--red)}
+  .wallet-text{font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:1px}
+  .wallet-balance{margin-left:auto;font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--cyan)}
 
   /* HERO */
   .hero{text-align:center;padding:80px 0;position:relative}
@@ -47,7 +40,8 @@
   .hero h1{font-family:'Bebas Neue',sans-serif;font-size:72px;letter-spacing:6px;line-height:1;margin-bottom:16px}
   .hero h1 .cyan{color:var(--cyan);text-shadow:0 0 40px rgba(0,191,255,0.3)}
   .hero h1 .pink{color:var(--pink);text-shadow:0 0 40px rgba(255,45,135,0.3)}
-  .hero p{font-size:18px;color:var(--text);max-width:600px;margin:0 auto 40px;line-height:1.6;font-weight:300}
+  .hero p{font-size:18px;color:var(--text);max-width:640px;margin:0 auto 16px;line-height:1.6;font-weight:300}
+  .hero .highlight{font-family:'Share Tech Mono',monospace;font-size:14px;color:var(--green);letter-spacing:2px;margin-bottom:40px}
   .hero-cta{display:flex;gap:16px;justify-content:center}
   .hero-stats{display:flex;justify-content:center;gap:48px;margin-top:60px;padding-top:40px}
   .hero-stat{text-align:center}
@@ -61,7 +55,7 @@
   .section h2{font-family:'Bebas Neue',sans-serif;font-size:42px;letter-spacing:3px;margin-bottom:16px}
   .section p.desc{font-size:16px;color:var(--text);max-width:600px;margin-bottom:40px;line-height:1.6;font-weight:300}
 
-  /* HOW IT WORKS */
+  /* STEPS */
   .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
   .step{background:var(--card);border:1px solid var(--border);padding:32px 24px;position:relative;transition:all 0.3s}
   .step:hover{border-color:var(--cyan);transform:translateY(-4px)}
@@ -71,29 +65,41 @@
   .step h3{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;margin-bottom:8px}
   .step p{font-size:14px;color:var(--text);line-height:1.5;font-weight:300}
 
-  /* TIERS */
-  .tiers{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
-  .tier{background:var(--card);border:1px solid var(--border);padding:24px;text-align:center;transition:all 0.3s;position:relative;overflow:hidden}
-  .tier:hover{transform:translateY(-4px);border-color:var(--tier-color)}
-  .tier::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--tier-color)}
-  .tier-icon{font-size:36px;margin-bottom:12px}
-  .tier-name{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;color:var(--tier-color);margin-bottom:4px}
-  .tier-reward{font-family:'Share Tech Mono',monospace;font-size:14px;color:var(--white);margin-bottom:12px}
-  .tier-desc{font-size:12px;color:var(--text);line-height:1.4}
-  .tier.bronze{--tier-color:#CD7F32}.tier.silver{--tier-color:#C0C0C0}.tier.gold{--tier-color:#FFD700}.tier.diamond{--tier-color:#B9F2FF}.tier.creator{--tier-color:#A855F7}
+  /* VIEW TIERS */
+  .view-tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .view-tier{background:var(--card);border:1px solid var(--border);padding:28px 20px;text-align:center;transition:all 0.3s;position:relative;overflow:hidden}
+  .view-tier:hover{transform:translateY(-4px);border-color:var(--tier-color)}
+  .view-tier::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--tier-color)}
+  .view-tier-icon{font-size:32px;margin-bottom:12px}
+  .view-tier-views{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--tier-color);letter-spacing:2px;margin-bottom:4px}
+  .view-tier-rate{font-family:'Share Tech Mono',monospace;font-size:16px;color:var(--white);margin-bottom:8px}
+  .view-tier-example{font-size:12px;color:var(--text);line-height:1.4;font-style:italic}
+  .view-tier.t1{--tier-color:#C0C0C0}.view-tier.t2{--tier-color:#FFD700}.view-tier.t3{--tier-color:#FF2D87}.view-tier.t4{--tier-color:#A855F7}
 
-  /* UPLOAD AREA */
-  .upload-zone{background:var(--card);border:2px dashed var(--border);padding:80px 40px;text-align:center;cursor:pointer;transition:all 0.3s;position:relative}
+  /* LINK SHARE */
+  .link-demo{background:var(--card);border:1px solid var(--border);padding:32px;margin-top:32px}
+  .link-demo-title{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;margin-bottom:16px;color:var(--cyan)}
+  .link-row{display:flex;align-items:center;gap:12px;background:rgba(0,0,0,0.3);padding:12px 16px;border:1px solid var(--border);margin-bottom:12px}
+  .link-url{font-family:'Share Tech Mono',monospace;font-size:13px;color:var(--cyan);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .link-copy{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--dark);background:var(--cyan);padding:4px 12px;cursor:pointer;letter-spacing:1px}
+  .link-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+  .link-stat{text-align:center;padding:16px;background:rgba(0,0,0,0.3);border:1px solid var(--border)}
+  .link-stat-value{font-family:'Bebas Neue',sans-serif;font-size:28px}
+  .link-stat-value.views{color:var(--white)}
+  .link-stat-value.wild{color:var(--cyan)}
+  .link-stat-value.shares{color:var(--pink)}
+  .link-stat-value.rate{color:var(--green)}
+  .link-stat-label{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--text);letter-spacing:2px;margin-top:4px}
+
+  /* UPLOAD */
+  .upload-zone{background:var(--card);border:2px dashed var(--border);padding:80px 40px;text-align:center;cursor:pointer;transition:all 0.3s}
   .upload-zone:hover,.upload-zone.dragover{border-color:var(--cyan);background:rgba(0,191,255,0.03)}
-  .upload-zone.dragover{box-shadow:inset 0 0 40px rgba(0,191,255,0.1)}
   .upload-icon{font-size:48px;margin-bottom:16px;opacity:0.6}
   .upload-zone h3{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:2px;margin-bottom:8px}
   .upload-zone p{color:var(--text);font-size:14px;margin-bottom:24px}
   .upload-specs{display:flex;justify-content:center;gap:24px;flex-wrap:wrap}
   .upload-spec{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--text);letter-spacing:1px;background:rgba(0,191,255,0.05);border:1px solid var(--border);padding:4px 12px}
   .upload-input{display:none}
-
-  /* UPLOAD PROGRESS */
   .upload-progress{display:none;background:var(--card);border:1px solid var(--border);padding:24px;margin-top:20px}
   .upload-progress.active{display:block}
   .upload-file{display:flex;align-items:center;gap:16px;margin-bottom:16px}
@@ -103,80 +109,65 @@
   .upload-file-meta{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--text);letter-spacing:1px}
   .progress-bar{height:4px;background:var(--border);border-radius:2px;overflow:hidden;margin-bottom:12px}
   .progress-fill{height:100%;background:linear-gradient(90deg,var(--cyan),var(--pink));border-radius:2px;transition:width 0.3s;width:0%}
-
-  /* CHECKS */
   .checks{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
   .check{display:flex;align-items:center;gap:8px;font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:1px;padding:8px 12px;background:rgba(0,0,0,0.3)}
   .check-icon{width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px}
-  .check-icon.pass{background:rgba(0,255,136,0.2);color:var(--green)}
-  .check-icon.fail{background:rgba(255,68,68,0.2);color:var(--red)}
+  .check-icon.pass{background:rgba(0,255,136,0.2);color:var(--green)}.check-icon.fail{background:rgba(255,68,68,0.2);color:var(--red)}
   .check-icon.pending{background:rgba(255,215,0,0.2);color:var(--yellow);animation:pulse 1.5s infinite}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
 
+  /* GENERATED LINK RESULT */
+  .link-result{display:none;background:var(--card);border:1px solid var(--green);padding:32px;margin-top:20px;text-align:center}
+  .link-result.active{display:block}
+  .link-result h3{font-family:'Bebas Neue',sans-serif;font-size:24px;color:var(--green);letter-spacing:2px;margin-bottom:8px}
+  .link-result p{font-size:13px;color:var(--text);margin-bottom:20px}
+  .generated-link{font-family:'Share Tech Mono',monospace;font-size:15px;color:var(--cyan);background:rgba(0,0,0,0.4);padding:14px 20px;border:1px solid var(--cyan);margin-bottom:20px;cursor:pointer;transition:all 0.2s;word-break:break-all}
+  .generated-link:hover{background:rgba(0,191,255,0.1)}
+  .share-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .share-btn{padding:8px 20px;font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:2px;border:none;cursor:pointer;transition:all 0.2s}
+  .share-btn.x{background:#000;color:#fff;border:1px solid #333}.share-btn.x:hover{border-color:#fff}
+  .share-btn.tiktok{background:#000;color:#FF0050;border:1px solid #FF0050}.share-btn.tiktok:hover{background:#FF0050;color:#fff}
+  .share-btn.ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff}.share-btn.ig:hover{opacity:0.9}
+  .share-btn.copy{background:var(--cyan);color:var(--dark)}.share-btn.copy:hover{box-shadow:0 0 12px rgba(0,191,255,0.4)}
+
   /* LEADERBOARD */
   .leaderboard{background:var(--card);border:1px solid var(--border)}
-  .lb-header{display:grid;grid-template-columns:50px 1fr 120px 100px 100px;padding:12px 20px;font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--text);letter-spacing:2px;text-transform:uppercase;border-bottom:1px solid var(--border)}
-  .lb-row{display:grid;grid-template-columns:50px 1fr 120px 100px 100px;padding:14px 20px;border-bottom:1px solid rgba(10,37,64,0.5);transition:background 0.2s;align-items:center}
+  .lb-header{display:grid;grid-template-columns:50px 1fr 100px 100px 100px 80px;padding:12px 20px;font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--text);letter-spacing:2px;text-transform:uppercase;border-bottom:1px solid var(--border)}
+  .lb-row{display:grid;grid-template-columns:50px 1fr 100px 100px 100px 80px;padding:14px 20px;border-bottom:1px solid rgba(10,37,64,0.5);transition:background 0.2s;align-items:center}
   .lb-row:hover{background:rgba(0,191,255,0.03)}
-  .lb-rank{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--text)}
-  .lb-rank.top{color:var(--yellow)}
+  .lb-rank{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--text)}.lb-rank.top{color:var(--yellow)}
   .lb-creator{display:flex;align-items:center;gap:12px}
   .lb-avatar{width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;font-size:14px}
-  .lb-name{font-weight:600;font-size:14px}
-  .lb-wallet{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--text)}
-  .lb-clips{font-family:'Share Tech Mono',monospace;font-size:13px;text-align:center}
+  .lb-name{font-weight:600;font-size:14px}.lb-wallet{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--text)}
+  .lb-val{font-family:'Share Tech Mono',monospace;font-size:13px;text-align:center}
   .lb-wild{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--cyan);text-align:center}
+  .lb-views{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--white);text-align:center}
   .lb-streak{font-family:'Share Tech Mono',monospace;font-size:12px;text-align:center;color:var(--green)}
 
-  /* WALLET CONNECT */
-  .wallet-bar{display:flex;align-items:center;gap:12px;padding:8px 16px;background:var(--card);border:1px solid var(--border);cursor:pointer;transition:all 0.2s}
-  .wallet-bar:hover{border-color:var(--cyan)}
-  .wallet-dot{width:8px;height:8px;border-radius:50%}
-  .wallet-dot.connected{background:var(--green);box-shadow:0 0 8px var(--green)}
-  .wallet-dot.disconnected{background:var(--red)}
-  .wallet-text{font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:1px}
-  .wallet-balance{margin-left:auto;font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--cyan)}
-
-  /* PAGES */
-  .page{display:none}
-  .page.active{display:block}
-
-  /* FOOTER */
+  .page{display:none}.page.active{display:block}
   footer{margin-top:80px;padding:32px 0;border-top:1px solid var(--border);text-align:center}
   footer p{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--text);letter-spacing:2px}
 
-  /* RESPONSIVE */
   @media(max-width:768px){
-    .hero h1{font-size:42px}
-    .steps{grid-template-columns:1fr 1fr}
-    .tiers{grid-template-columns:repeat(2,1fr)}
-    .tiers .tier:last-child{grid-column:span 2}
-    .hero-stats{flex-wrap:wrap;gap:24px}
+    .hero h1{font-size:42px}.steps{grid-template-columns:1fr 1fr}.view-tiers{grid-template-columns:1fr 1fr}
+    .hero-stats{flex-wrap:wrap;gap:24px}.link-stats{grid-template-columns:1fr 1fr}
     .lb-header,.lb-row{grid-template-columns:40px 1fr 80px 80px}
-    .lb-header>:last-child,.lb-row>:last-child{display:none}
-    .checks{grid-template-columns:1fr}
+    .lb-header>:nth-child(5),.lb-header>:nth-child(6),.lb-row>:nth-child(5),.lb-row>:nth-child(6){display:none}
   }
-  @media(max-width:480px){
-    .steps{grid-template-columns:1fr}
-    .tiers{grid-template-columns:1fr}
-    .tiers .tier:last-child{grid-column:span 1}
-    .nav-links .nav-link{display:none}
-  }
+  @media(max-width:480px){.steps{grid-template-columns:1fr}.view-tiers{grid-template-columns:1fr}.nav-links .nav-link{display:none}}
 </style>
 </head>
 <body>
-
 <div class="wrapper">
-  <!-- NAV -->
   <nav>
     <div class="nav-brand">
       <div class="nav-logo">WILDER <span>CONTENT</span> NETWORK</div>
       <div class="nav-tag">Beta</div>
     </div>
     <div class="nav-links">
-      <a class="nav-link active" onclick="showPage('home')">Home</a>
-      <a class="nav-link" onclick="showPage('upload')">Upload</a>
-      <a class="nav-link" onclick="showPage('leaderboard')">Leaderboard</a>
+      <a class="nav-link active" onclick="showPage('home',this)">Home</a>
+      <a class="nav-link" onclick="showPage('upload',this)">Upload</a>
+      <a class="nav-link" onclick="showPage('leaderboard',this)">Leaderboard</a>
       <div class="wallet-bar" onclick="connectWallet()">
         <div class="wallet-dot disconnected" id="wallet-dot"></div>
         <span class="wallet-text" id="wallet-text">Connect Wallet</span>
@@ -185,100 +176,108 @@
     </div>
   </nav>
 
-  <!-- HOME PAGE -->
+  <!-- HOME -->
   <div class="page active" id="page-home">
-    <!-- HERO -->
     <section class="hero">
       <div class="hero-badge">Wilder World Content Program</div>
-      <h1><span class="cyan">CLIP.</span> <span class="pink">SUBMIT.</span> <span class="cyan">EARN $WILD.</span></h1>
-      <p>Play Wilder World. Capture your best kills. Upload to the Content Network. Get paid in $WILD tokens for every accepted clip.</p>
+      <h1><span class="cyan">CLIP.</span> <span class="pink">SHARE.</span> <span class="cyan">EARN $WILD.</span></h1>
+      <p>Upload your Wilder World gameplay. Get a unique link. Share it everywhere. Earn $WILD for every view your clip gets.</p>
+      <div class="highlight">MORE VIEWS = MORE $WILD — IT'S THAT SIMPLE</div>
       <div class="hero-cta">
-        <button class="btn btn-cyan" onclick="showPage('upload')">⬆ UPLOAD CLIP</button>
-        <button class="btn btn-outline" onclick="showPage('leaderboard')">🏆 LEADERBOARD</button>
+        <button class="btn btn-cyan" onclick="showPage('upload',this)">⬆ UPLOAD CLIP</button>
+        <button class="btn btn-outline" onclick="showPage('leaderboard',this)">🏆 LEADERBOARD</button>
       </div>
       <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="hero-stat-value" id="stat-creators">247</div>
-          <div class="hero-stat-label">Creators</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-value" id="stat-clips">1,832</div>
-          <div class="hero-stat-label">Clips Submitted</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-value" id="stat-wild">42,500</div>
-          <div class="hero-stat-label">$WILD Distributed</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-value" id="stat-used">312</div>
-          <div class="hero-stat-label">Used in Official Content</div>
-        </div>
+        <div class="hero-stat"><div class="hero-stat-value" id="stat-creators">247</div><div class="hero-stat-label">Creators</div></div>
+        <div class="hero-stat"><div class="hero-stat-value" id="stat-views">2.4M</div><div class="hero-stat-label">Total Views</div></div>
+        <div class="hero-stat"><div class="hero-stat-value" id="stat-wild">142,500</div><div class="hero-stat-label">$WILD Earned</div></div>
+        <div class="hero-stat"><div class="hero-stat-value" id="stat-clips">1,832</div><div class="hero-stat-label">Clips Live</div></div>
       </div>
     </section>
 
     <!-- HOW IT WORKS -->
     <section class="section">
       <div class="section-label">How It Works</div>
-      <h2>FOUR STEPS TO EARNING $WILD</h2>
+      <h2>UPLOAD. GET A LINK. GET PAID PER VIEW.</h2>
       <div class="steps">
-        <div class="step">
-          <div class="step-num">01</div>
-          <h3>PLAY & RECORD</h3>
-          <p>Play Wilder World at 2K resolution. Record your gameplay — focus on kills, highlights, and cinematic moments.</p>
+        <div class="step"><div class="step-num">01</div><h3>RECORD</h3><p>Play Wilder World at 2K. Record kills, highlights, cinematic moments. The better the clip, the more people watch.</p></div>
+        <div class="step"><div class="step-num">02</div><h3>UPLOAD</h3><p>Submit your clip. We auto-verify it's real WW gameplay, check resolution, and approve it in minutes.</p></div>
+        <div class="step"><div class="step-num">03</div><h3>GET YOUR LINK</h3><p>Every approved clip gets a unique trackable link. Views are counted across every platform you share it on.</p></div>
+        <div class="step"><div class="step-num">04</div><h3>EARN $WILD</h3><p>$WILD tokens accumulate in your wallet based on views. Hit viral thresholds to unlock bonus multipliers.</p></div>
+      </div>
+    </section>
+
+    <!-- VIEW-BASED REWARDS -->
+    <section class="section">
+      <div class="section-label">Reward Structure</div>
+      <h2>VIEWS PAY $WILD</h2>
+      <p class="desc">The more your clip is watched, the more you earn. Hit higher view milestones to unlock better rates. Viral clips can earn thousands of $WILD.</p>
+      <div class="view-tiers">
+        <div class="view-tier t1">
+          <div class="view-tier-icon">👁️</div>
+          <div class="view-tier-views">0 — 1K</div>
+          <div class="view-tier-rate">1 WILD / 100 views</div>
+          <div class="view-tier-example">1,000 views = 10 WILD</div>
         </div>
-        <div class="step">
-          <div class="step-num">02</div>
-          <h3>UPLOAD</h3>
-          <p>Submit your best clips to the Content Network. Our system auto-checks resolution, format, and duration instantly.</p>
+        <div class="view-tier t2">
+          <div class="view-tier-icon">🔥</div>
+          <div class="view-tier-views">1K — 10K</div>
+          <div class="view-tier-rate">2 WILD / 100 views</div>
+          <div class="view-tier-example">10,000 views = 190 WILD</div>
         </div>
-        <div class="step">
-          <div class="step-num">03</div>
-          <h3>GET VERIFIED</h3>
-          <p>AI verifies it's real WW gameplay. Team reviews for quality. Approved clips get tier-rated (Bronze → Diamond).</p>
+        <div class="view-tier t3">
+          <div class="view-tier-icon">💥</div>
+          <div class="view-tier-views">10K — 100K</div>
+          <div class="view-tier-rate">5 WILD / 100 views</div>
+          <div class="view-tier-example">100,000 views = 4,690 WILD</div>
         </div>
-        <div class="step">
-          <div class="step-num">04</div>
-          <h3>EARN $WILD</h3>
-          <p>$WILD tokens hit your wallet for every accepted clip. Bonus multipliers for kills, streaks, and clips that go viral.</p>
+        <div class="view-tier t4">
+          <div class="view-tier-icon">🌊</div>
+          <div class="view-tier-views">100K+</div>
+          <div class="view-tier-rate">10 WILD / 100 views</div>
+          <div class="view-tier-example">1M views = 94,690 WILD</div>
+        </div>
+      </div>
+
+      <!-- LINK DEMO -->
+      <div class="link-demo">
+        <div class="link-demo-title">YOUR CLIP LINK — REAL-TIME TRACKING</div>
+        <div class="link-row">
+          <span style="font-size:18px">🎬</span>
+          <span class="link-url">wilder.gg/clip/NightHawk_triple-kill-forum-assault</span>
+          <span class="link-copy" onclick="this.textContent='COPIED!';setTimeout(()=>this.textContent='COPY',1500)">COPY</span>
+        </div>
+        <div class="link-stats">
+          <div class="link-stat"><div class="link-stat-value views" id="demo-views">24,847</div><div class="link-stat-label">Total Views</div></div>
+          <div class="link-stat"><div class="link-stat-value wild">487</div><div class="link-stat-label">$WILD Earned</div></div>
+          <div class="link-stat"><div class="link-stat-value shares">1,204</div><div class="link-stat-label">Shares</div></div>
+          <div class="link-stat"><div class="link-stat-value rate">🔥 2x RATE</div><div class="link-stat-label">Current Tier</div></div>
         </div>
       </div>
     </section>
 
-    <!-- REWARD TIERS -->
+    <!-- BONUS MULTIPLIERS -->
     <section class="section">
-      <div class="section-label">Reward Tiers</div>
-      <h2>QUALITY PAYS MORE</h2>
-      <p class="desc">Higher quality submissions earn more $WILD. Kill clips with 2K+ resolution on a streak can earn up to 18x the base reward.</p>
-      <div class="tiers">
-        <div class="tier bronze">
-          <div class="tier-icon">🥉</div>
-          <div class="tier-name">BRONZE</div>
-          <div class="tier-reward">5 WILD</div>
-          <div class="tier-desc">Raw clip, 1080p min, 10-60s gameplay</div>
+      <div class="section-label">Bonus Multipliers</div>
+      <h2>STACK YOUR REWARDS</h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+        <div class="step" style="text-align:center">
+          <div style="font-size:32px;margin-bottom:12px">🎯</div>
+          <h3>KILL CLIPS</h3>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--green);margin:8px 0">1.5×</div>
+          <p>Clips featuring eliminations and combat earn 50% more per view</p>
         </div>
-        <div class="tier silver">
-          <div class="tier-icon">🥈</div>
-          <div class="tier-name">SILVER</div>
-          <div class="tier-reward">15 WILD</div>
-          <div class="tier-desc">2K+ resolution, kill/highlight, good framing</div>
+        <div class="step" style="text-align:center">
+          <div style="font-size:32px;margin-bottom:12px">📺</div>
+          <h3>2K+ RESOLUTION</h3>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--green);margin:8px 0">2×</div>
+          <p>Upload at 2K or higher and double your view rate</p>
         </div>
-        <div class="tier gold">
-          <div class="tier-icon">🥇</div>
-          <div class="tier-name">GOLD</div>
-          <div class="tier-reward">50 WILD</div>
-          <div class="tier-desc">Edited montage, transitions, music sync</div>
-        </div>
-        <div class="tier diamond">
-          <div class="tier-icon">💎</div>
-          <div class="tier-name">DIAMOND</div>
-          <div class="tier-reward">200 WILD</div>
-          <div class="tier-desc">Featured on official WW channels, 10K+ views</div>
-        </div>
-        <div class="tier creator">
-          <div class="tier-icon">👑</div>
-          <div class="tier-name">CREATOR</div>
-          <div class="tier-reward">BONUS POOL</div>
-          <div class="tier-desc">Consistent weekly quality — monthly bonus rewards</div>
+        <div class="step" style="text-align:center">
+          <div style="font-size:32px;margin-bottom:12px">⭐</div>
+          <h3>OFFICIAL USE</h3>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--green);margin:8px 0">3×</div>
+          <p>If WW uses your clip on official channels, triple all earnings</p>
         </div>
       </div>
     </section>
@@ -289,16 +288,15 @@
     <section class="section" style="padding-top:0">
       <div class="section-label">Submit Content</div>
       <h2>UPLOAD YOUR CLIP</h2>
-      <p class="desc">Drag & drop or click to upload. We'll verify it automatically.</p>
+      <p class="desc">Upload → verify → get your link → start earning per view.</p>
 
       <div class="upload-zone" id="upload-zone" onclick="document.getElementById('file-input').click()">
         <div class="upload-icon">🎬</div>
         <h3>DROP YOUR CLIP HERE</h3>
-        <p>or click to browse files</p>
+        <p>or click to browse</p>
         <div class="upload-specs">
           <span class="upload-spec">MP4 / MOV / WEBM</span>
-          <span class="upload-spec">1080P MINIMUM</span>
-          <span class="upload-spec">2K PREFERRED</span>
+          <span class="upload-spec">1080P MIN — 2K PREFERRED</span>
           <span class="upload-spec">10s — 5min</span>
           <span class="upload-spec">2GB MAX</span>
         </div>
@@ -308,249 +306,167 @@
       <div class="upload-progress" id="upload-progress">
         <div class="upload-file">
           <div class="upload-file-icon">🎮</div>
-          <div class="upload-file-info">
-            <div class="upload-file-name" id="upload-filename">—</div>
-            <div class="upload-file-meta" id="upload-meta">—</div>
-          </div>
+          <div class="upload-file-info"><div class="upload-file-name" id="upload-filename">—</div><div class="upload-file-meta" id="upload-meta">—</div></div>
         </div>
         <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
         <div class="checks" id="checks">
           <div class="check"><div class="check-icon pending" id="chk-format">⏳</div> File Format</div>
           <div class="check"><div class="check-icon pending" id="chk-size">⏳</div> File Size</div>
-          <div class="check"><div class="check-icon pending" id="chk-resolution">⏳</div> Resolution</div>
-          <div class="check"><div class="check-icon pending" id="chk-duration">⏳</div> Duration</div>
-          <div class="check"><div class="check-icon pending" id="chk-gameplay">⏳</div> WW Gameplay</div>
+          <div class="check"><div class="check-icon pending" id="chk-resolution">⏳</div> Resolution ≥ 1080p</div>
+          <div class="check"><div class="check-icon pending" id="chk-duration">⏳</div> Duration 10s-5min</div>
+          <div class="check"><div class="check-icon pending" id="chk-gameplay">⏳</div> WW Gameplay Verified</div>
           <div class="check"><div class="check-icon pending" id="chk-quality">⏳</div> Quality Score</div>
         </div>
         <div style="margin-top:20px;text-align:center">
-          <button class="btn btn-cyan" id="submit-btn" style="display:none" onclick="submitClip()">✓ SUBMIT FOR REVIEW</button>
+          <button class="btn btn-cyan" id="submit-btn" style="display:none" onclick="generateLink()">✓ GENERATE YOUR LINK</button>
           <p id="upload-status" style="font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--text);letter-spacing:1px;margin-top:12px"></p>
         </div>
       </div>
-    </section>
-  </div>
 
-  <!-- LEADERBOARD PAGE -->
-  <div class="page" id="page-leaderboard">
-    <section class="section" style="padding-top:0">
-      <div class="section-label">Top Creators</div>
-      <h2>LEADERBOARD</h2>
-      <p class="desc">The best Wilder World content creators ranked by accepted clips and $WILD earned.</p>
-
-      <div class="leaderboard">
-        <div class="lb-header">
-          <span>Rank</span>
-          <span>Creator</span>
-          <span>Clips</span>
-          <span>$WILD</span>
-          <span>Streak</span>
+      <!-- GENERATED LINK -->
+      <div class="link-result" id="link-result">
+        <h3>🎉 YOUR CLIP IS LIVE!</h3>
+        <p>Share this link everywhere. Every view earns you $WILD.</p>
+        <div class="generated-link" id="generated-link" onclick="copyLink()">wilder.gg/clip/your-clip-id</div>
+        <div class="share-buttons">
+          <button class="share-btn x" onclick="shareX()">SHARE ON 𝕏</button>
+          <button class="share-btn tiktok">SHARE ON TIKTOK</button>
+          <button class="share-btn ig">SHARE ON IG</button>
+          <button class="share-btn copy" onclick="copyLink()">📋 COPY LINK</button>
         </div>
-        <div class="lb-row">
-          <div class="lb-rank top">1</div>
-          <div class="lb-creator"><div class="lb-avatar">🎯</div><div><div class="lb-name">NightHawk_WW</div><div class="lb-wallet">0x7a3...f8c2</div></div></div>
-          <div class="lb-clips">142</div>
-          <div class="lb-wild">4,250</div>
-          <div class="lb-streak">🔥 23d</div>
-        </div>
-        <div class="lb-row">
-          <div class="lb-rank top">2</div>
-          <div class="lb-creator"><div class="lb-avatar">💀</div><div><div class="lb-name">CRIMINALZZ</div><div class="lb-wallet">0x2b1...a4e7</div></div></div>
-          <div class="lb-clips">118</div>
-          <div class="lb-wild">3,680</div>
-          <div class="lb-streak">🔥 14d</div>
-        </div>
-        <div class="lb-row">
-          <div class="lb-rank top">3</div>
-          <div class="lb-creator"><div class="lb-avatar">⚡</div><div><div class="lb-name">WilderSniper</div><div class="lb-wallet">0x9c4...b1d3</div></div></div>
-          <div class="lb-clips">96</div>
-          <div class="lb-wild">2,940</div>
-          <div class="lb-streak">🔥 31d</div>
-        </div>
-        <div class="lb-row">
-          <div class="lb-rank">4</div>
-          <div class="lb-creator"><div class="lb-avatar">🎮</div><div><div class="lb-name">Tahsin012</div><div class="lb-wallet">0x5e8...c7f1</div></div></div>
-          <div class="lb-clips">87</div>
-          <div class="lb-wild">2,450</div>
-          <div class="lb-streak">7d</div>
-        </div>
-        <div class="lb-row">
-          <div class="lb-rank">5</div>
-          <div class="lb-creator"><div class="lb-avatar">🔥</div><div><div class="lb-name">OrderaHit</div><div class="lb-wallet">0x1f3...e9a6</div></div></div>
-          <div class="lb-clips">74</div>
-          <div class="lb-wild">2,180</div>
-          <div class="lb-streak">🔥 12d</div>
-        </div>
-        <div class="lb-row">
-          <div class="lb-rank">6</div>
-          <div class="lb-creator"><div class="lb-avatar">🎬</div><div><div class="lb-name">WiamiDirector</div><div class="lb-wallet">0x8d2...f4b8</div></div></div>
-          <div class="lb-clips">63</div>
-          <div class="lb-wild">3,100</div>
-          <div class="lb-streak">5d</div>
-        </div>
-        <div class="lb-row">
-          <div class="lb-rank">7</div>
-          <div class="lb-creator"><div class="lb-avatar">💎</div><div><div class="lb-name">RobertBaxter</div><div class="lb-wallet">0x4a7...d2e5</div></div></div>
-          <div class="lb-clips">51</div>
-          <div class="lb-wild">1,820</div>
-          <div class="lb-streak">3d</div>
-        </div>
-        <div class="lb-row">
-          <div class="lb-rank">8</div>
-          <div class="lb-creator"><div class="lb-avatar">🏴‍☠️</div><div><div class="lb-name">WildmanZekle</div><div class="lb-wallet">0x6c1...a8f3</div></div></div>
-          <div class="lb-clips">48</div>
-          <div class="lb-wild">1,540</div>
-          <div class="lb-streak">🔥 9d</div>
-        </div>
-        <div class="lb-row">
-          <div class="lb-rank">9</div>
-          <div class="lb-creator"><div class="lb-avatar">🎯</div><div><div class="lb-name">HerPundit</div><div class="lb-wallet">0x3b9...c1d7</div></div></div>
-          <div class="lb-clips">39</div>
-          <div class="lb-wild">1,280</div>
-          <div class="lb-streak">2d</div>
-        </div>
-        <div class="lb-row">
-          <div class="lb-rank">10</div>
-          <div class="lb-creator"><div class="lb-avatar">⭐</div><div><div class="lb-name">amateur_Clark</div><div class="lb-wallet">0x7e5...b6a2</div></div></div>
-          <div class="lb-clips">34</div>
-          <div class="lb-wild">980</div>
-          <div class="lb-streak">1d</div>
+        <div class="link-stats" style="margin-top:24px">
+          <div class="link-stat"><div class="link-stat-value views">0</div><div class="link-stat-label">Views</div></div>
+          <div class="link-stat"><div class="link-stat-value wild">0</div><div class="link-stat-label">$WILD Earned</div></div>
+          <div class="link-stat"><div class="link-stat-value shares">0</div><div class="link-stat-label">Shares</div></div>
+          <div class="link-stat"><div class="link-stat-value rate">👁️ BASE</div><div class="link-stat-label">View Tier</div></div>
         </div>
       </div>
     </section>
   </div>
 
-  <footer>
-    <p>WILDER CONTENT NETWORK — POWERED BY WILDER WORLD — 2026</p>
-  </footer>
+  <!-- LEADERBOARD -->
+  <div class="page" id="page-leaderboard">
+    <section class="section" style="padding-top:0">
+      <div class="section-label">Top Creators</div>
+      <h2>LEADERBOARD — BY VIEWS</h2>
+      <p class="desc">Ranked by total views across all clips. More views = more $WILD.</p>
+      <div class="leaderboard">
+        <div class="lb-header"><span>Rank</span><span>Creator</span><span>Views</span><span>Clips</span><span>$WILD</span><span>Streak</span></div>
+        <div class="lb-row"><div class="lb-rank top">1</div><div class="lb-creator"><div class="lb-avatar">🎯</div><div><div class="lb-name">NightHawk_WW</div><div class="lb-wallet">0x7a3...f8c2</div></div></div><div class="lb-views">482K</div><div class="lb-val">142</div><div class="lb-wild">12,450</div><div class="lb-streak">🔥 23d</div></div>
+        <div class="lb-row"><div class="lb-rank top">2</div><div class="lb-creator"><div class="lb-avatar">💀</div><div><div class="lb-name">CRIMINALZZ</div><div class="lb-wallet">0x2b1...a4e7</div></div></div><div class="lb-views">341K</div><div class="lb-val">118</div><div class="lb-wild">8,920</div><div class="lb-streak">🔥 14d</div></div>
+        <div class="lb-row"><div class="lb-rank top">3</div><div class="lb-creator"><div class="lb-avatar">⚡</div><div><div class="lb-name">WilderSniper</div><div class="lb-wallet">0x9c4...b1d3</div></div></div><div class="lb-views">287K</div><div class="lb-val">96</div><div class="lb-wild">7,640</div><div class="lb-streak">🔥 31d</div></div>
+        <div class="lb-row"><div class="lb-rank">4</div><div class="lb-creator"><div class="lb-avatar">🎮</div><div><div class="lb-name">Tahsin012</div><div class="lb-wallet">0x5e8...c7f1</div></div></div><div class="lb-views">195K</div><div class="lb-val">87</div><div class="lb-wild">5,280</div><div class="lb-streak">7d</div></div>
+        <div class="lb-row"><div class="lb-rank">5</div><div class="lb-creator"><div class="lb-avatar">🔥</div><div><div class="lb-name">OrderaHit</div><div class="lb-wallet">0x1f3...e9a6</div></div></div><div class="lb-views">156K</div><div class="lb-val">74</div><div class="lb-wild">4,180</div><div class="lb-streak">🔥 12d</div></div>
+        <div class="lb-row"><div class="lb-rank">6</div><div class="lb-creator"><div class="lb-avatar">🎬</div><div><div class="lb-name">WiamiDirector</div><div class="lb-wallet">0x8d2...f4b8</div></div></div><div class="lb-views">128K</div><div class="lb-val">63</div><div class="lb-wild">6,200</div><div class="lb-streak">5d</div></div>
+        <div class="lb-row"><div class="lb-rank">7</div><div class="lb-creator"><div class="lb-avatar">💎</div><div><div class="lb-name">RobertBaxter</div><div class="lb-wallet">0x4a7...d2e5</div></div></div><div class="lb-views">94K</div><div class="lb-val">51</div><div class="lb-wild">2,820</div><div class="lb-streak">3d</div></div>
+        <div class="lb-row"><div class="lb-rank">8</div><div class="lb-creator"><div class="lb-avatar">🏴‍☠️</div><div><div class="lb-name">WildmanZekle</div><div class="lb-wallet">0x6c1...a8f3</div></div></div><div class="lb-views">72K</div><div class="lb-val">48</div><div class="lb-wild">2,140</div><div class="lb-streak">🔥 9d</div></div>
+        <div class="lb-row"><div class="lb-rank">9</div><div class="lb-creator"><div class="lb-avatar">🎯</div><div><div class="lb-name">HerPundit</div><div class="lb-wallet">0x3b9...c1d7</div></div></div><div class="lb-views">51K</div><div class="lb-val">39</div><div class="lb-wild">1,680</div><div class="lb-streak">2d</div></div>
+        <div class="lb-row"><div class="lb-rank">10</div><div class="lb-creator"><div class="lb-avatar">⭐</div><div><div class="lb-name">amateur_Clark</div><div class="lb-wallet">0x7e5...b6a2</div></div></div><div class="lb-views">38K</div><div class="lb-val">34</div><div class="lb-wild">1,180</div><div class="lb-streak">1d</div></div>
+      </div>
+    </section>
+  </div>
+
+  <footer><p>WILDER CONTENT NETWORK — POWERED BY WILDER WORLD — 2026</p></footer>
 </div>
 
 <script>
-// PAGE NAVIGATION
-function showPage(page) {
+function showPage(page, el) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
   document.getElementById('page-' + page).classList.add('active');
-  event.target.classList.add('active');
+  if (el && el.classList) el.classList.add('active');
   window.scrollTo(0, 0);
 }
 
-// WALLET CONNECT (simulated for MVP)
 let walletConnected = false;
 function connectWallet() {
   if (walletConnected) return;
-  // Simulate wallet connect
-  const dot = document.getElementById('wallet-dot');
-  const text = document.getElementById('wallet-text');
-  const balance = document.getElementById('wallet-balance');
-  dot.className = 'wallet-dot connected';
-  text.textContent = '0x7a3...f8c2';
-  balance.textContent = '1,250 WILD';
+  document.getElementById('wallet-dot').className = 'wallet-dot connected';
+  document.getElementById('wallet-text').textContent = '0x7a3...f8c2';
+  document.getElementById('wallet-balance').textContent = '1,250 WILD';
   walletConnected = true;
 }
 
-// DRAG & DROP
 const zone = document.getElementById('upload-zone');
 zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('dragover'); });
 zone.addEventListener('dragleave', () => zone.classList.remove('dragover'));
-zone.addEventListener('drop', e => {
-  e.preventDefault();
-  zone.classList.remove('dragover');
-  if (e.dataTransfer.files.length) handleUpload(e.dataTransfer.files[0]);
-});
+zone.addEventListener('drop', e => { e.preventDefault(); zone.classList.remove('dragover'); if (e.dataTransfer.files.length) handleUpload(e.dataTransfer.files[0]); });
 
-// UPLOAD HANDLER
 function handleUpload(file) {
   if (!file) return;
-  const progress = document.getElementById('upload-progress');
-  progress.classList.add('active');
-  
+  document.getElementById('upload-progress').classList.add('active');
   document.getElementById('upload-filename').textContent = file.name;
-  const sizeMB = (file.size / 1024 / 1024).toFixed(1);
-  document.getElementById('upload-meta').textContent = sizeMB + ' MB — ' + file.type;
-  
-  // Simulate upload progress
+  document.getElementById('upload-meta').textContent = (file.size/1024/1024).toFixed(1)+' MB — '+file.type;
   let pct = 0;
   const fill = document.getElementById('progress-fill');
-  const interval = setInterval(() => {
+  const iv = setInterval(() => {
     pct += Math.random() * 15;
-    if (pct >= 100) { pct = 100; clearInterval(interval); runChecks(file); }
+    if (pct >= 100) { pct = 100; clearInterval(iv); runChecks(file); }
     fill.style.width = pct + '%';
   }, 200);
 }
 
-// VERIFICATION CHECKS (simulated)
 function runChecks(file) {
   const checks = [
     { id: 'chk-format', pass: ['video/mp4','video/webm','video/quicktime'].includes(file.type) },
-    { id: 'chk-size', pass: file.size <= 2 * 1024 * 1024 * 1024 },
-    { id: 'chk-resolution', pass: true },  // Would need video metadata
+    { id: 'chk-size', pass: file.size <= 2*1024*1024*1024 },
+    { id: 'chk-resolution', pass: true },
     { id: 'chk-duration', pass: true },
     { id: 'chk-gameplay', pass: true },
     { id: 'chk-quality', pass: true }
   ];
-  
   let delay = 0;
-  let allPassed = true;
-  checks.forEach(check => {
+  checks.forEach(c => {
     delay += 400 + Math.random() * 600;
     setTimeout(() => {
-      const el = document.getElementById(check.id);
-      if (check.pass) {
-        el.textContent = '✓';
-        el.className = 'check-icon pass';
-      } else {
-        el.textContent = '✗';
-        el.className = 'check-icon fail';
-        allPassed = false;
-      }
+      const el = document.getElementById(c.id);
+      el.textContent = c.pass ? '✓' : '✗';
+      el.className = 'check-icon ' + (c.pass ? 'pass' : 'fail');
     }, delay);
   });
-  
   setTimeout(() => {
-    const status = document.getElementById('upload-status');
-    const btn = document.getElementById('submit-btn');
-    if (allPassed) {
-      status.textContent = 'ALL CHECKS PASSED — READY TO SUBMIT';
-      status.style.color = 'var(--green)';
-      btn.style.display = 'inline-flex';
-    } else {
-      status.textContent = 'SOME CHECKS FAILED — PLEASE FIX AND RE-UPLOAD';
-      status.style.color = 'var(--red)';
-    }
+    document.getElementById('upload-status').textContent = 'ALL CHECKS PASSED';
+    document.getElementById('upload-status').style.color = 'var(--green)';
+    document.getElementById('submit-btn').style.display = 'inline-flex';
   }, delay + 500);
 }
 
-function submitClip() {
-  const status = document.getElementById('upload-status');
-  const btn = document.getElementById('submit-btn');
-  btn.style.display = 'none';
-  status.textContent = '✓ SUBMITTED — PENDING TEAM REVIEW. YOU\'LL BE NOTIFIED WHEN APPROVED.';
-  status.style.color = 'var(--cyan)';
+function generateLink() {
+  const slug = document.getElementById('upload-filename').textContent.replace(/\.[^.]+$/,'').replace(/[^a-zA-Z0-9]/g,'-').toLowerCase();
+  document.getElementById('generated-link').textContent = 'wilder.gg/clip/' + slug;
+  document.getElementById('submit-btn').style.display = 'none';
+  document.getElementById('upload-status').textContent = '';
+  document.getElementById('link-result').classList.add('active');
+  // Simulate live view counter
+  let views = 0;
+  setInterval(() => {
+    views += Math.floor(Math.random() * 3) + 1;
+    document.querySelector('#link-result .views').textContent = views.toLocaleString();
+  }, 2000);
 }
 
-// ANIMATE STATS ON LOAD
-function animateValue(id, end, duration) {
-  const el = document.getElementById(id);
-  const start = 0;
-  const range = end - start;
-  const startTime = performance.now();
-  function update(now) {
-    const elapsed = now - startTime;
-    const progress = Math.min(elapsed / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    const value = Math.floor(start + range * eased);
-    el.textContent = value.toLocaleString();
-    if (progress < 1) requestAnimationFrame(update);
-  }
-  requestAnimationFrame(update);
+function copyLink() {
+  const link = document.getElementById('generated-link').textContent;
+  navigator.clipboard.writeText('https://' + link);
+  const el = document.getElementById('generated-link');
+  const orig = el.textContent;
+  el.textContent = '✓ COPIED TO CLIPBOARD';
+  el.style.color = 'var(--green)';
+  setTimeout(() => { el.textContent = orig; el.style.color = 'var(--cyan)'; }, 1500);
 }
 
-window.addEventListener('load', () => {
-  animateValue('stat-creators', 247, 1500);
-  animateValue('stat-clips', 1832, 1800);
-  animateValue('stat-wild', 42500, 2000);
-  animateValue('stat-used', 312, 1600);
-});
+function shareX() {
+  const link = document.getElementById('generated-link').textContent;
+  window.open('https://twitter.com/intent/tweet?text=Check out my Wilder World kill clip 🎯🔥&url=https://'+encodeURIComponent(link), '_blank');
+}
+
+// Animate demo view counter
+let demoViews = 24847;
+setInterval(() => {
+  demoViews += Math.floor(Math.random() * 5) + 1;
+  const el = document.getElementById('demo-views');
+  if (el) el.textContent = demoViews.toLocaleString();
+}, 3000);
 </script>
 </body>
 </html>
